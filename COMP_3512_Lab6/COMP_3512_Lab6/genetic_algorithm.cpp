@@ -4,7 +4,13 @@
 int Main()
 {
 
-
+	/* Declares the pointers to our dynamically allocated memory. */
+	struct tour * population;      // Holds our candidate population
+	struct tour * parents;         // Used during crossover
+	struct tour * crosses;         // Used during calculations
+	struct tour * temporary_tour;  // Used during calculations
+	struct city * cities_to_visit; // Stores master list of cities
+	struct tour * child;
 }
 
 void shuffle_cities(city * permutation)
