@@ -117,6 +117,9 @@
   <ItemGroup>
     <ClCompile Include="genetic_algorithm.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="genetic_algorithm.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
