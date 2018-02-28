@@ -1,26 +1,17 @@
 #pragma once
 
-#define GENETIC_ALGORITHM_H
-
-/* Definitions and then prototypes here */
-#define POPULATION_SIZE 30
-#define CITIES_IN_TOUR  20
-
 /* A city structure contains:
 a) a name
 b) x and y coordinates */
 struct city {
-	char name;
-	int  x_coordinate;
-	int  y_coordinate;
+
 };
 
 /* A tour structure contains:
 a) a fitness rating
 b) an array of CITIES_IN_TOUR cities */
 struct tour {
-	double fitness;
-	struct city permutation[CITIES_IN_TOUR];
+
 };
 
 void shuffle_cities(struct city * permutation);
