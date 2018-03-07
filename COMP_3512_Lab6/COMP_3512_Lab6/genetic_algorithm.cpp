@@ -4,6 +4,13 @@
 int Main()
 {
 
+    /* Variables */
+	int    i = 0, j = 0, iterations = 0;
+	int    index_of_shortest_tour  = 0;
+	double best_distance           = 0.0;
+	double best_iteration_distance = 0.0;
+	double improvement_factor      = 0.3;
+
 	/* Declares the pointers to our dynamically allocated memory. */
 	struct tour * population;      // Holds our candidate population
 	struct tour * parents;         // Used during crossover
@@ -11,6 +18,14 @@ int Main()
 	struct tour * temporary_tour;  // Used during calculations
 	struct city * cities_to_visit; // Stores master list of cities
 	struct tour * child;
+
+    /* Initializes dynamically allocated memory to specified sizes */
+    population      = (struct tour *) malloc (sizeof(struct tour) * POPULATION_SIZE );
+    crosses         = (struct tour *) malloc (sizeof(struct tour) * (POPULATION_SIZE - NUMBER_OF_ELITES));
+    temporary_tour  = (struct tour *) malloc (sizeof(struct tour));
+    cities_to_visit = (struct city *) malloc (sizeof(struct city) * CITIES_IN_TOUR ); 
+    parents         = NULL;
+    child           = NULL;
 }
 
 void shuffle_cities(city * permutation)
