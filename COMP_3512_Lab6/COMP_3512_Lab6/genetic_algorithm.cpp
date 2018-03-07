@@ -7,6 +7,8 @@
 
 #include <iostream>   
 #include <cstdlib> 
+#include <vector>
+#include <stack>
 
 /* Remember to avoid magic numbers by defining constants */
 #define SHUFFLES          32      // A shuffle consists of swaps
@@ -58,6 +60,11 @@ int main()
     parents         = nullptr;
     child           = nullptr;
 
+	/*Initializes Stack and Vectore*/
+	vector<city> pop;
+	vector<city *> tour;
+	stack<city> st;
+	
 
 	/* Declares and defines the master list of all the cities that we need to visit.
 	The cities are named 'A', 'B', ... , and they each have a random X and Y
