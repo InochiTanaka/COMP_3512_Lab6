@@ -1,40 +1,21 @@
 #pragma once
+#include <vector>
 
-/* Definitions and then prototypes here */
-#define POPULATION_SIZE 30
-#define CITIES_IN_TOUR  20
+class Genetic_Algorithm {
+	private:
+		//static constexpr int CITIES_IN_TOUR = 20;
+		//static constexpr int ASCII_OFFSET = 65;
+		//static constexpr int NUMBER_OF_ELITES = 1;
+		//static constexpr int POPULATION_SIZE = 30;
+		//static constexpr int FITNESS_SCALER = 10000.0;
+		//static constexpr int MAP_BOUNDARY = 1000;
 
-/* A city structure contains:
-a) a name
-b) x and y coordinates */
-struct city {
-	char name;
-	int  x_coordinate;
-	int  y_coordinate;
+		//std::vector<Tour> population;
+		//std::vector<Tour> parents;
+		//std::vector<Tour> crosses;
+		//Tour temporary_tour;
+		//std::vector<City> cities_to_visit;
+		//Tour child;
+
+
 };
-
-/* A tour structure contains:
-a) a fitness rating
-b) an array of CITIES_IN_TOUR cities */
-struct tour {
-	double fitness;
-	struct city permutation[CITIES_IN_TOUR];
-};
-
-void shuffle_cities(struct city * permutation);
-
-double get_distance_between_cities(city city_a, city city_b);
-
-double get_tour_distance(struct tour city_list);
-
-int determine_fitness(struct tour * population, int population_size);
-
-void swap_cities(city city_a, city city_b);
-
-struct tour * select_parents(struct tour * population);
-
-struct tour * crossover(struct tour * parents);
-
-void mutate(struct tour * population);
-
-int contains_city(struct tour * candidate_tour, int length, struct city * candidate_city);
