@@ -115,10 +115,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="City.hpp" />
     <ClCompile Include="genetic_algorithm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="genetic_algorithm.hpp" />
+    <ClInclude Include="Tour.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

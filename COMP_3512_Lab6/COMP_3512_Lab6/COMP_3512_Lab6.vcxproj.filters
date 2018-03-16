@@ -18,9 +18,15 @@
     <ClCompile Include="genetic_algorithm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="City.hpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="genetic_algorithm.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tour.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
