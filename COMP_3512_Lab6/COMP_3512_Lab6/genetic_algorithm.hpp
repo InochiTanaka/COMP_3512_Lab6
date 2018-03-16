@@ -24,5 +24,7 @@ class Genetic_Algorithm {
 		int determine_fitness(std::vector<Tour>& population, int poplulation_size);
 		double get_tour_distance(Tour city_list);
 		double get_distance_between_cities(City a, City b);
-
+		std::vector<Tour> select_parents(std::vector<Tour> population);
+		Tour crossover(std::vector<Tour>& parents);
+		void mutate(std::vector<Tour> population);
 };

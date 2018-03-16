@@ -1,6 +1,7 @@
 #pragma once
 
 struct City {
+	static constexpr int CITIES_IN_TOUR = 20;
 
 	char name;
 	int  x_coordinate;
