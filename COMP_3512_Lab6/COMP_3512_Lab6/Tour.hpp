@@ -9,7 +9,10 @@ struct Tour {
 	std::vector<City> permutation{ CITIES_IN_TOUR };
 
 	Tour() {}
-	~Tour() {}
+	~Tour() 
+	{
+		std::vector<City>().swap(permutation);
+	}
 
 	Tour(double input_fitness, std::vector<City>& input_permutation) {
 		fitness = input_fitness;

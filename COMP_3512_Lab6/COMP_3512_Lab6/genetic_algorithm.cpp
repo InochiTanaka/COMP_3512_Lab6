@@ -1,5 +1,16 @@
 #include "genetic_algorithm.hpp"
 
+/* Gentic Algorithm works to generate high quality solution of problems like optimization and serch problems.
+	In this program, serching the shortest distance of cities by rundam generating data. 
+	For Gentic Algorithm, generating better data by three ways as mutation, crossover and selection. 
+	After the ordered number of negerating iteration, find the shortest distance one as the result.
+	
+	By my C++ implimentation, improving some part compare with C implementation.
+	For example, made easy to access array by implimeting vector. 
+	Also, avoiding assigning data by making getter and setter on each structs.
+	In additon, made simple structer by selapating City and Tour class on each files.
+	*/
+
 int main(void)
 {
 	Genetic_Algorithm test;
@@ -15,10 +26,9 @@ Genetic_Algorithm::Genetic_Algorithm()
 	double improvement_factor = 0.3;
 
 	/* Declares and Initializes the pointers to our dynamically allocated memory. */
-	std::vector<Tour> population(POPULATION_SIZE);      // Holds our candidate population
-	std::vector<Tour> parents;         // Used during crossover
-	std::vector<Tour> crosses{ POPULATION_SIZE - NUMBER_OF_ELITES };         // Used during calculations
-	std::vector<Tour> temporary_tour;  // Used during calculations
+	std::vector<Tour> population(POPULATION_SIZE);							// Holds our candidate population
+	std::vector<Tour> parents;												// Used during crossover
+	std::vector<Tour> crosses{ POPULATION_SIZE - NUMBER_OF_ELITES };        // Used during calculations
 	std::vector<City> cities_to_visit(CITIES_IN_TOUR);
 	Tour child;
 	srand((unsigned int)time(NULL));
@@ -100,6 +110,12 @@ Genetic_Algorithm::Genetic_Algorithm()
 	/* Prints summary information */
 	printf("Shortest distance %8.3f\n",
 		(FITNESS_SCALER / population[index_of_shortest_tour].getFitness()));
+
+	//Release memory of vectors
+	std::vector<Tour>().swap(population);
+	std::vector<Tour>().swap(parents);
+	std::vector<Tour>().swap(crosses);
+	std::vector<City>().swap(cities_to_visit);
 }
 
 int Genetic_Algorithm::determine_fitness(std::vector<Tour>& population, int population_size)
@@ -156,7 +172,6 @@ std::vector<Tour> Genetic_Algorithm::select_parents(std::vector<Tour> population
 	}
 	std::vector<Tour>().swap(parent_pool);
 	return parents;
-
 }
 
 Tour Genetic_Algorithm::crossover(std::vector<Tour>& parents)
@@ -174,7 +189,6 @@ Tour Genetic_Algorithm::crossover(std::vector<Tour>& parents)
 	/* Copies the first 'boundary_index' cities in order from parent 1 to the mixed
 	result */
 	for (int i = 0; i < boundary_index; i++) {
-		//child.setPermutation(parents[0].getPermutation()[i])[i];
 		child.getPermutation()[i] = parents[0].getPermutation()[i];
 
 	}
@@ -196,6 +210,7 @@ Tour Genetic_Algorithm::crossover(std::vector<Tour>& parents)
 
 	return child;
 }
+
 
 void Genetic_Algorithm::mutate(std::vector<Tour> population)
 {
